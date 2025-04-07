@@ -1,0 +1,13 @@
+property_id,inventory_id,inventory_name,availability
+101,105,Standard Room,50
+101,205,Luxury Room,30
+101,305,Suite,20
+102,105,Standard Room,50
+102,205,Luxury Room,30
+102,305,Suite,20
+103,105,Standard Room,50
+103,205,Luxury Room,30
+103,305,Suite,20
+104,105,Standard Room,50
+104,205,Luxury Room,30
+104,305,Suite,20

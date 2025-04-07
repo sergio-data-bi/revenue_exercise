@@ -1,0 +1,91 @@
+version: 2
+
+models:
+
+  - name: stg__reservation_data
+    description: "{{ doc('stg__reservation_data') }}"
+    columns:
+      - name: reservation_id
+        tests:
+          - not_null
+      - name: stay_date
+      - name: booking_date
+      - name: property_id
+      - name: property_group_id
+      - name: inventory_id
+      - name: local_currency
+      - name: net_revenue
+
+  - name: stg__property_group
+    description: "{{ doc('stg__property_group') }}"
+    columns:
+      - name: property_group_id
+        tests:
+          - unique
+          - not_null
+      - name: property_group_name
+      - name: base_currency
+      - name: created_at
+
+  - name: stg__inventory
+    description: "{{ doc('stg__inventory') }}"
+    columns:
+      - name: inventory_id
+        tests:
+          - not_null
+      - name: property_id
+        tests:
+          - not_null
+      - name: inventory_name
+      - name: availability
+
+  - name: stg__currency_rates
+    description: "{{ doc('stg__currency_rates') }}"
+    columns:
+      - name: exchange_date
+        tests:
+          - not_null
+      - name: local_currency
+        tests:
+          - not_null
+      - name: base_currency
+        tests:
+          - not_null
+      - name: rate
+        tests:
+          - not_null
+
+  - name: int__reservations_with_currency_rates
+    description: "{{ doc('int__reservations_with_currency_rates') }}"
+    columns:
+      - name: reservation_id
+        tests:
+          - not_null
+
+  - name: agg__revenue_by_property
+    description: "{{ doc('agg__revenue_by_property') }}"
+    columns:
+      - name: property_id
+      - name: stay_date
+      - name: local_currency
+      - name: base_currency
+      - name: total_revenue_local_currency
+      - name: total_revenue_base_currency
+
+  - name: agg__revenue_by_inventory
+    description: "{{ doc('agg__revenue_by_inventory') }}"
+    columns:
+      - name: property_id
+      - name: stay_date
+      - name: local_currency
+      - name: base_currency
+      - name: total_revenue_local_currency
+      - name: total_revenue_base_currency
+
+  - name: agg__revenue_by_property_group
+    description: "{{ doc('agg__revenue_by_property_group') }}"
+    columns:
+      - name: property_group_id
+      - name: stay_date
+      - name: base_currency
+      - name: total_revenue_base_currency

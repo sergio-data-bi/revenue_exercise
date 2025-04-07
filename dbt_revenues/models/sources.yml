@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    tables:
+      - name: reservation_data
+      - name: property_group
+      - name: inventory
+      - name: currency_rates

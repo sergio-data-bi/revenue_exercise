@@ -1,0 +1,12 @@
+target/
+dbt_packages/
+logs/
+venv/
+**/__pycache__/
+tmp*/
+archive/
+.idea/
+package-lock.yml
+*.pyc
+*.duckdb
+*.duckdb.wal

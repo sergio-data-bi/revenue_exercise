@@ -1,0 +1,22 @@
+name: 'dbt_revenues'
+version: '1.0.0'
+
+profile: 'dbt_revenues'
+
+model-paths: ["models"]
+docs-paths: ["docs"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_revenues:
+      +materialized: view
+      staging:
+        +materialized: ephemeral

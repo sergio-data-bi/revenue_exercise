@@ -1,0 +1,7 @@
+version: 2
+data_tests:
+  - name: test__missing_intermediate_reservations
+    description: "{{ doc('test__missing_intermediate_reservations') }}"
+
+  - name: test__missing_currency_rates
+    description: "{{ doc('test__missing_currency_rates') }}"

@@ -1,0 +1,6 @@
+duckdb~=1.2.1
+dbt-duckdb~=1.9.2
+pandas~=2.2.3
+streamlit~=1.44.1
+altair~=5.5.0
+freecurrencyapi~=0.1.0
