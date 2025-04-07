@@ -12,7 +12,8 @@ Reservations are booked in various local currencies, but revenue reporting must 
 Without a reliable and automated solution, accurately converting currencies, aggregating revenues, and maintaining timely analytics becomes error-prone and inefficient, impacting business agility and clarity.
 
 ## Solution
-This project provides an automated data pipeline solution leveraging Python, DuckDB, and dbt, extracting currency data from [freecurrencyapi.com](https://freecurrencyapi.com/)
+This project provides an automated data pipeline solution leveraging Python, DuckDB, and dbt, extracting currency data from [freecurrencyapi.com](https://freecurrencyapi.com/), enriching the source data and visualise the result in a Streamlit dashboard:
+[Streamlit dashboard link]()
 
 ### Workflow
 - Extracts and loads raw reservation, property group, and inventory data from source CSV files into DuckDB.
@@ -34,6 +35,16 @@ This project provides an automated data pipeline solution leveraging Python, Duc
 - `streamlit_app.py`: For generating the Revenue Dashboard web app
 - `extract_and_load.py`: Extract and load the source CSV data and the API currency rates into DuckDB
 
+# dbt local user profiles.yml configuration
+```
+dbt_revenues:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      schema: main
+```
 
 ## Run instructions
 ```
@@ -46,7 +57,8 @@ dbt build --project-dir dbt_revenues
 streamlit run streamlit_app.py
 
 # dbt documentation
-dbt docs serve
+dbt docs generate --project-dir dbt_revenues
+dbt docs serve --project-dir dbt_revenues
 ```
 
 ## Get Started
