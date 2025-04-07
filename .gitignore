@@ -8,5 +8,4 @@ archive/
 .idea/
 package-lock.yml
 *.pyc
-*.duckdb
 *.duckdb.wal

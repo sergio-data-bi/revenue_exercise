@@ -14,6 +14,7 @@ Without a reliable and automated solution, accurately converting currencies, agg
 ## Solution
 This project provides an automated data pipeline solution leveraging Python, DuckDB, and dbt, extracting currency data from [freecurrencyapi.com](https://freecurrencyapi.com/), enriching the source data and visualise the result in a Streamlit dashboard:
 [Streamlit dashboard link]()
+[Open dbt Generated Documentation](https://sergio-data-bi.github.io/revenue_exercise)
 
 ### Workflow
 - Extracts and loads raw reservation, property group, and inventory data from source CSV files into DuckDB.
