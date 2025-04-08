@@ -5,3 +5,6 @@ data_tests:
 
   - name: test__missing_currency_rates
     description: "{{ doc('test__missing_currency_rates') }}"
+
+  - name: test__reservations_row_count_comparison
+    description: "{{ doc('test__reservations_row_count_comparison') }}"
