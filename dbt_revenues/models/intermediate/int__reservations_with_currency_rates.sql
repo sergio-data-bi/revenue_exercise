@@ -30,7 +30,8 @@ FROM reservations r
 LEFT JOIN property_groups pg
     ON r.property_group_id = pg.property_group_id
 LEFT JOIN inventory i
-    ON r.inventory_id = i.inventory_id
+    ON r.property_id = i.property_id
+       AND r.inventory_id = i.inventory_id
 LEFT JOIN currency_rates cr
     ON r.stay_date = cr.exchange_date
     AND r.local_currency = cr.local_currency
